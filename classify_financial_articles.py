@@ -14,3 +14,4 @@ def process(inPath, outPath):
     input_df = pd.read_csv(inPath)
     # Vectorize data
     features = tfidf_vectorizer.transform(input_df['body'])
+    # Predict the classes
