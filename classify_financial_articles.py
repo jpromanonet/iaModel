@@ -13,4 +13,4 @@ def process(inPath, outPath):
     # read input file from CSV
     input_df = pd.read_csv(inPath)
     # Vectorize data
-    features = tfidf_vectorizer.transform(input_df)
+    features = tfidf_vectorizer.transform(input_df['body'])
