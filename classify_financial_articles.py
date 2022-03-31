@@ -15,3 +15,8 @@ def process(inPath, outPath):
     # Vectorize data
     features = tfidf_vectorizer.transform(input_df['body'])
     # Predict the classes
+    predictions = model.predict(features)
+    # convert output lavels to categories
+    input_df['category'] = label_encoder.inverse_transform(predictions)
+    # Save results to CSV
+    output_df = input_df[['id', 'category']]
