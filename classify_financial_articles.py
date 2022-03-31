@@ -20,3 +20,4 @@ def process(inPath, outPath):
     input_df['category'] = label_encoder.inverse_transform(predictions)
     # Save results to CSV
     output_df = input_df[['id', 'category']]
+    output_df.to_csv(outPath, index=False)
